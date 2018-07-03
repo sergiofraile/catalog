@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Albums</key>
+	<string>https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/50/explicit.json</string>
+	<key>Movies</key>
+	<string>https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/100/explicit.json</string>
+</dict>
+</plist>
