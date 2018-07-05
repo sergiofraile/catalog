@@ -41,12 +41,13 @@ class DataManager {
   // Fetch the routes through the RoutesRequest struct. RoutesRequest allows
   // to kind of server responses to easily iterate through them with a switch
   // operation.
-  func fetchMovies() {
-    moviesRequester.perform { result in
+  private func fetchMovies(_ completion: (() -> Void)? = nil) {
+    moviesRequester.perform { [weak self] result in
       switch result {
       case .success(let movies):
         // Routes have been loaded, so we assign them and notify the rest of the application.
-        self.movies = movies
+        self?.movies = movies
+        completion?()
         // This notification is being observed in RoutesViewController.swift
 //        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Notifications.RoutesLoadSuccess), object: nil)
         break
@@ -60,12 +61,13 @@ class DataManager {
     }
   }
   
-  func fetchAlbums() {
-    albumsRequester.perform { result in
+  private func fetchAlbums(_ completion: (() -> Void)? = nil) {
+    albumsRequester.perform { [weak self] result in
       switch result {
       case .success(let albums):
         // Routes have been loaded, so we assign them and notify the rest of the application.
-        self.movies = albums
+        self?.albums = albums
+        completion?()
         // This notification is being observed in RoutesViewController.swift
 //        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Notifications.RoutesLoadSuccess), object: nil)
         break
@@ -79,4 +81,12 @@ class DataManager {
     }
   }
   
+  func fetch(_ type: FeedType, completion: (() -> Void)? = nil) {
+    switch type {
+    case .movies:
+      fetchMovies(completion)
+    case .albums:
+      fetchAlbums(completion)
+    }
+  }
 }

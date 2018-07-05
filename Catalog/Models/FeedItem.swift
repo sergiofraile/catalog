@@ -19,6 +19,7 @@ public struct FeedItem: Decodable {
   let id: String
   let artistName: String
   let releaseDate: String
+  let name: String
   let contentAdvisoryRating: String?
   let kind: String
   let artworkUrl: String?
@@ -33,9 +34,10 @@ public struct FeedItem: Decodable {
     case id
     case artistName
     case releaseDate
+    case name
     case contentAdvisoryRating
     case kind
-    case artworkUrl
+    case artworkUrl = "artworkUrl100"
     case genres
     case url
     case artistId
@@ -49,6 +51,7 @@ public struct FeedItem: Decodable {
     self.id = try container.decode(String.self, forKey: .id)
     self.artistName = try container.decode(String.self, forKey: .artistName)
     self.releaseDate = try container.decode(String.self, forKey: .releaseDate)
+    self.name = try container.decode(String.self, forKey: .name)
     self.contentAdvisoryRating = try container.decodeIfPresent(String?.self, forKey: .contentAdvisoryRating) ?? nil
     self.kind = try container.decode(String.self, forKey: .kind)
     self.artworkUrl = try container.decodeIfPresent(String?.self, forKey: .artworkUrl) ?? nil

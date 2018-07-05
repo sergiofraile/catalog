@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49053BF520ED68A6002A9A2E /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49053BF420ED68A6002A9A2E /* FeedItemCell.swift */; };
+		49053BF720ED6D9A002A9A2E /* FeedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49053BF620ED6D9A002A9A2E /* FeedTabBarController.swift */; };
 		492A3C4C20EBF1960045862A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4B20EBF1960045862A /* AppDelegate.swift */; };
-		492A3C4E20EBF1960045862A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4D20EBF1960045862A /* FirstViewController.swift */; };
+		492A3C4E20EBF1960045862A /* FeedItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */; };
 		492A3C5020EBF1960045862A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4F20EBF1960045862A /* SecondViewController.swift */; };
 		492A3C5320EBF1960045862A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 492A3C5120EBF1960045862A /* Main.storyboard */; };
 		492A3C5520EBF1980045862A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492A3C5420EBF1980045862A /* Assets.xcassets */; };
@@ -24,6 +26,7 @@
 		492A3C8D20EC0E7E0045862A /* Endpoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492A3C8C20EC0E7E0045862A /* Endpoints.plist */; };
 		492A3C8F20EC10310045862A /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C8E20EC10310045862A /* FeedType.swift */; };
 		492A3C9120EC15E40045862A /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C9020EC15E40045862A /* ServerResponse.swift */; };
+		4941D91920EE062200617DA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D91820EE062200617DA6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49053BF420ED68A6002A9A2E /* FeedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
+		49053BF620ED6D9A002A9A2E /* FeedTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTabBarController.swift; sourceTree = "<group>"; };
 		492A3C4820EBF1960045862A /* Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		492A3C4B20EBF1960045862A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		492A3C4D20EBF1960045862A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsTableViewController.swift; sourceTree = "<group>"; };
 		492A3C4F20EBF1960045862A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		492A3C5220EBF1960045862A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		492A3C5420EBF1980045862A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		492A3C8C20EC0E7E0045862A /* Endpoints.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Endpoints.plist; sourceTree = "<group>"; };
 		492A3C8E20EC10310045862A /* FeedType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedType.swift; sourceTree = "<group>"; };
 		492A3C9020EC15E40045862A /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		4941D91820EE062200617DA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49053BF320ED688C002A9A2E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				49053BF420ED68A6002A9A2E /* FeedItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		492A3C3F20EBF1960045862A = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +132,14 @@
 			isa = PBXGroup;
 			children = (
 				492A3C4B20EBF1960045862A /* AppDelegate.swift */,
-				492A3C4D20EBF1960045862A /* FirstViewController.swift */,
+				4941D91820EE062200617DA6 /* Constants.swift */,
+				49053BF620ED6D9A002A9A2E /* FeedTabBarController.swift */,
+				492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */,
 				492A3C4F20EBF1960045862A /* SecondViewController.swift */,
 				492A3C7E20EC07830045862A /* Models */,
 				492A3C7B20EC073A0045862A /* Managers */,
 				492A3C8920EC0E2B0045862A /* API */,
+				49053BF320ED688C002A9A2E /* Cells */,
 				492A3C8320EC0DDA0045862A /* Protocols */,
 				492A3C8620EC0E080045862A /* Extensions */,
 				492A3C5120EBF1960045862A /* Main.storyboard */,
@@ -327,15 +344,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49053BF720ED6D9A002A9A2E /* FeedTabBarController.swift in Sources */,
 				492A3C5020EBF1960045862A /* SecondViewController.swift in Sources */,
 				492A3C7D20EC07540045862A /* DataManager.swift in Sources */,
 				492A3C8F20EC10310045862A /* FeedType.swift in Sources */,
 				492A3C8820EC0E130045862A /* UIImageView+Extension.swift in Sources */,
 				492A3C4C20EBF1960045862A /* AppDelegate.swift in Sources */,
+				49053BF520ED68A6002A9A2E /* FeedItemCell.swift in Sources */,
 				492A3C8220EC0D330045862A /* Genre.swift in Sources */,
 				492A3C8520EC0DE30045862A /* Request.swift in Sources */,
-				492A3C4E20EBF1960045862A /* FirstViewController.swift in Sources */,
+				492A3C4E20EBF1960045862A /* FeedItemsTableViewController.swift in Sources */,
 				492A3C8020EC078F0045862A /* FeedItem.swift in Sources */,
+				4941D91920EE062200617DA6 /* Constants.swift in Sources */,
 				492A3C9120EC15E40045862A /* ServerResponse.swift in Sources */,
 				492A3C8B20EC0E4E0045862A /* FeedRequest.swift in Sources */,
 			);

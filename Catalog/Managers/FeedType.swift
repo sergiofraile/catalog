@@ -25,7 +25,6 @@ enum FeedType: String {
     // We read the endpoints fromm Enpoints.plist
     let serverConfig = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Endpoints", ofType: "plist")!)!
     // The API endpoint is stored here
-    NSLog("The identifier is in here \(self.identifier)")
     return serverConfig.object(forKey: self.identifier) as! String
   }
   
