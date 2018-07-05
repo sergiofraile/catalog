@@ -27,6 +27,7 @@
 		492A3C8F20EC10310045862A /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C8E20EC10310045862A /* FeedType.swift */; };
 		492A3C9120EC15E40045862A /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C9020EC15E40045862A /* ServerResponse.swift */; };
 		4941D91920EE062200617DA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941D91820EE062200617DA6 /* Constants.swift */; };
+		49C98B5920EE2A1B002653FD /* FeedItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C98B5820EE2A1B002653FD /* FeedItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		492A3C8E20EC10310045862A /* FeedType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedType.swift; sourceTree = "<group>"; };
 		492A3C9020EC15E40045862A /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		4941D91820EE062200617DA6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49C98B5820EE2A1B002653FD /* FeedItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				4941D91820EE062200617DA6 /* Constants.swift */,
 				49053BF620ED6D9A002A9A2E /* FeedTabBarController.swift */,
 				492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */,
+				49C98B5820EE2A1B002653FD /* FeedItemDetailViewController.swift */,
 				492A3C4F20EBF1960045862A /* SecondViewController.swift */,
 				492A3C7E20EC07830045862A /* Models */,
 				492A3C7B20EC073A0045862A /* Managers */,
@@ -346,6 +349,7 @@
 			files = (
 				49053BF720ED6D9A002A9A2E /* FeedTabBarController.swift in Sources */,
 				492A3C5020EBF1960045862A /* SecondViewController.swift in Sources */,
+				49C98B5920EE2A1B002653FD /* FeedItemDetailViewController.swift in Sources */,
 				492A3C7D20EC07540045862A /* DataManager.swift in Sources */,
 				492A3C8F20EC10310045862A /* FeedType.swift in Sources */,
 				492A3C8820EC0E130045862A /* UIImageView+Extension.swift in Sources */,

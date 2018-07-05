@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FeedTabBarController: UITabBarController {
+class FeedTabBarController: UITabBarController, UISplitViewControllerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,6 +33,8 @@ class FeedTabBarController: UITabBarController {
   
   func assignFeedTypeForView(_ position: Int, type: FeedType) {
     if let splitVC = self.viewControllers?[position] as? UISplitViewController{
+      splitVC.preferredDisplayMode = .allVisible
+      splitVC.delegate = self
       if let navVC = splitVC.viewControllers.first as? UINavigationController {
         if let tableVC = navVC.topViewController as? FeedItemsTableViewController {
           tableVC.itemType = type
@@ -40,5 +42,11 @@ class FeedTabBarController: UITabBarController {
         }
       }
     }
+  }
+  
+  // MARK: Split View Controller Delegate
+  
+  func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+      return true
   }
 }

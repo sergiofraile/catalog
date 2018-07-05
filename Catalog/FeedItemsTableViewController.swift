@@ -14,6 +14,7 @@ class FeedItemsTableViewController: UITableViewController {
   
   var itemType: FeedType?
   var items: [FeedItem] = []
+  var selectedIndex: Int = 0
   
   // MARK: Life cycle
   
@@ -45,6 +46,8 @@ class FeedItemsTableViewController: UITableViewController {
     }
   }
   
+  // MARK: Observers
+  
   func addObservers() {
     // Adding observer for data loaded
     NotificationCenter.default.addObserver(
@@ -62,6 +65,20 @@ class FeedItemsTableViewController: UITableViewController {
     )
   }
   
+  // MARK: Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showItemDetail" {
+      // The only parameter required when displaying the route information
+      // is the selected position from the table
+      if let navVC = segue.destination as? UINavigationController {
+        if let detailVC = navVC.topViewController as? FeedItemDetailViewController {
+          detailVC.selectedFeedItem = items[selectedIndex]
+        }
+      }
+    }
+  }
+  
   // MARK: Table View
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,9 +86,9 @@ class FeedItemsTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    selectedIndex = indexPath.row
+    selectedIndex = indexPath.row
     tableView.deselectRow(at: indexPath, animated: true)
-//    performSegue(withIdentifier: "showRouteInfo", sender: self)
+    performSegue(withIdentifier: "showItemDetail", sender: self)
   }
   
   // MARK: Table View Data Source
