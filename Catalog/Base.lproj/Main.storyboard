@@ -146,7 +146,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5s2-uz-rRO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2WH-qG-FYJ"/>
+                    <navigationItem key="navigationItem" id="2WH-qG-FYJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="U0e-Tp-BR6">
+                            <connections>
+                                <action selector="didTapShareButtonWithSender:" destination="vzS-k9-uFK" id="y4M-Ym-0Ix"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="mBq-ad-NTG" id="1ZU-pp-apA"/>
                         <outlet property="itemImageView" destination="dT6-j0-X6j" id="vX7-ec-JBE"/>

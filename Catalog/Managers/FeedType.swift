@@ -20,6 +20,15 @@ enum FeedType: String {
       return "Albums"
     }
   }
+  
+  var imageName: String {
+    switch self {
+    case .movies:
+      return "film"
+    case .albums:
+      return "music"
+    }
+  }
     
   var endpoint: String {
     // We read the endpoints fromm Enpoints.plist

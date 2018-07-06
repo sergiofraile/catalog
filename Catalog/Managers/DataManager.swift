@@ -41,52 +41,44 @@ class DataManager {
   // Fetch the routes through the RoutesRequest struct. RoutesRequest allows
   // to kind of server responses to easily iterate through them with a switch
   // operation.
-  private func fetchMovies(_ completion: (() -> Void)? = nil) {
+  private func fetchMovies(_ completion: (() -> Void)? = nil, failure: ((Error) -> Void)? = nil) {
     moviesRequester.perform { [weak self] result in
       switch result {
       case .success(let movies):
-        // Routes have been loaded, so we assign them and notify the rest of the application.
+        // Movies have been loaded and we execute the completion block if any.
         self?.movies = movies
         completion?()
-        // This notification is being observed in RoutesViewController.swift
-//        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Notifications.RoutesLoadSuccess), object: nil)
         break
       case .failure(let error):
-        // There was an error fetching the routes.
-        NSLog("Error fetching: \(error.localizedDescription)")
-        // This notification is being observed in RoutesViewController.swift
-//        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Notifications.RoutesLoadFailure), object: nil)
+        // There was an error fetching the movies.
+        failure?(error)
         break
       }
     }
   }
   
-  private func fetchAlbums(_ completion: (() -> Void)? = nil) {
+  private func fetchAlbums(_ completion: (() -> Void)? = nil, failure: ((Error) -> Void)? = nil) {
     albumsRequester.perform { [weak self] result in
       switch result {
       case .success(let albums):
-        // Routes have been loaded, so we assign them and notify the rest of the application.
+        // Albums have been loaded and we execute the completion block if any.
         self?.albums = albums
         completion?()
-        // This notification is being observed in RoutesViewController.swift
-//        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Notifications.RoutesLoadSuccess), object: nil)
         break
       case .failure(let error):
-        // There was an error fetching the routes.
-        NSLog("Error fetching: \(error.localizedDescription)")
-        // This notification is being observed in RoutesViewController.swift
-//        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Notifications.RoutesLoadFailure), object: nil)
+        // There was an error fetching the albums.
+        failure?(error)
         break
       }
     }
   }
   
-  func fetch(_ type: FeedType, completion: (() -> Void)? = nil) {
+  func fetch(_ type: FeedType, completion: (() -> Void)? = nil, failure: ((Error) -> Void)? = nil) {
     switch type {
     case .movies:
-      fetchMovies(completion)
+      fetchMovies(completion, failure: failure)
     case .albums:
-      fetchAlbums(completion)
+      fetchAlbums(completion, failure: failure)
     }
   }
 }

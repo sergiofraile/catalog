@@ -11,12 +11,10 @@
 		49053BF720ED6D9A002A9A2E /* FeedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49053BF620ED6D9A002A9A2E /* FeedTabBarController.swift */; };
 		492A3C4C20EBF1960045862A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4B20EBF1960045862A /* AppDelegate.swift */; };
 		492A3C4E20EBF1960045862A /* FeedItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */; };
-		492A3C5020EBF1960045862A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C4F20EBF1960045862A /* SecondViewController.swift */; };
 		492A3C5320EBF1960045862A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 492A3C5120EBF1960045862A /* Main.storyboard */; };
 		492A3C5520EBF1980045862A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492A3C5420EBF1980045862A /* Assets.xcassets */; };
 		492A3C5820EBF1980045862A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 492A3C5620EBF1980045862A /* LaunchScreen.storyboard */; };
 		492A3C6320EBF1980045862A /* CatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C6220EBF1980045862A /* CatalogTests.swift */; };
-		492A3C6E20EBF1990045862A /* CatalogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C6D20EBF1990045862A /* CatalogUITests.swift */; };
 		492A3C7D20EC07540045862A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C7C20EC07540045862A /* DataManager.swift */; };
 		492A3C8020EC078F0045862A /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C7F20EC078F0045862A /* FeedItem.swift */; };
 		492A3C8220EC0D330045862A /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492A3C8120EC0D330045862A /* Genre.swift */; };
@@ -53,7 +51,6 @@
 		492A3C4820EBF1960045862A /* Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		492A3C4B20EBF1960045862A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsTableViewController.swift; sourceTree = "<group>"; };
-		492A3C4F20EBF1960045862A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		492A3C5220EBF1960045862A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		492A3C5420EBF1980045862A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		492A3C5720EBF1980045862A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,8 +59,6 @@
 		492A3C6220EBF1980045862A /* CatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTests.swift; sourceTree = "<group>"; };
 		492A3C6420EBF1990045862A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492A3C6920EBF1990045862A /* CatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatalogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		492A3C6D20EBF1990045862A /* CatalogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogUITests.swift; sourceTree = "<group>"; };
-		492A3C6F20EBF1990045862A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492A3C7C20EC07540045862A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		492A3C7F20EC078F0045862A /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		492A3C8120EC0D330045862A /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -115,7 +110,6 @@
 			children = (
 				492A3C4A20EBF1960045862A /* Catalog */,
 				492A3C6120EBF1980045862A /* CatalogTests */,
-				492A3C6C20EBF1990045862A /* CatalogUITests */,
 				492A3C4920EBF1960045862A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,7 +132,6 @@
 				49053BF620ED6D9A002A9A2E /* FeedTabBarController.swift */,
 				492A3C4D20EBF1960045862A /* FeedItemsTableViewController.swift */,
 				49C98B5820EE2A1B002653FD /* FeedItemDetailViewController.swift */,
-				492A3C4F20EBF1960045862A /* SecondViewController.swift */,
 				492A3C7E20EC07830045862A /* Models */,
 				492A3C7B20EC073A0045862A /* Managers */,
 				492A3C8920EC0E2B0045862A /* API */,
@@ -161,15 +154,6 @@
 				492A3C6420EBF1990045862A /* Info.plist */,
 			);
 			path = CatalogTests;
-			sourceTree = "<group>";
-		};
-		492A3C6C20EBF1990045862A /* CatalogUITests */ = {
-			isa = PBXGroup;
-			children = (
-				492A3C6D20EBF1990045862A /* CatalogUITests.swift */,
-				492A3C6F20EBF1990045862A /* Info.plist */,
-			);
-			path = CatalogUITests;
 			sourceTree = "<group>";
 		};
 		492A3C7B20EC073A0045862A /* Managers */ = {
@@ -348,7 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49053BF720ED6D9A002A9A2E /* FeedTabBarController.swift in Sources */,
-				492A3C5020EBF1960045862A /* SecondViewController.swift in Sources */,
 				49C98B5920EE2A1B002653FD /* FeedItemDetailViewController.swift in Sources */,
 				492A3C7D20EC07540045862A /* DataManager.swift in Sources */,
 				492A3C8F20EC10310045862A /* FeedType.swift in Sources */,
@@ -377,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				492A3C6E20EBF1990045862A /* CatalogUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
