@@ -13,7 +13,12 @@ class FeedItemDetailViewController: UIViewController {
 
   // MARK: Outlets
   
-  @IBOutlet weak var mainLabel: UILabel!
+  @IBOutlet weak var itemInfoContainer: UIView!
+  @IBOutlet weak var itemImageView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var authorLabel: UILabel!
+  @IBOutlet weak var ratingAndDateLabel: UILabel!
+  @IBOutlet weak var selectItemLabel: UILabel!
   
   // MARK: Vars
   
@@ -21,9 +26,13 @@ class FeedItemDetailViewController: UIViewController {
   
   // MARK: Life cycle
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//    setup()
+//  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     setup()
   }
   
@@ -31,8 +40,22 @@ class FeedItemDetailViewController: UIViewController {
   
   func setup() {
     if let item = selectedFeedItem {
+      selectItemLabel.isHidden = true
+      itemInfoContainer.isHidden = false
       title = item.name
-      mainLabel.text = item.name
+      nameLabel.text = item.name
+      authorLabel.text = item.artistName
+      ratingAndDateLabel.text = "\(item.contentAdvisoryRating) - \(item.releaseDate)"
+      itemImageView.imageFromUrl(stringUrl: item.artworkUrl, withPlaceholder: "placeholder")
+    } else {
+      itemInfoContainer.isHidden = true
+      selectItemLabel.isHidden = false
     }
+  }
+  
+  // MARK: Actions
+  
+  @IBAction func didTapViewInItunes(_ sender: Any) {
+    
   }
 }

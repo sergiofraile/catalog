@@ -8,7 +8,13 @@
 
 import UIKit
 
-class FeedItemsTableViewController: UITableViewController {
+class FeedItemsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+  // MARK: Outlets
+  
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var loadingLabel: UILabel!
+  @IBOutlet weak var loadingActivity: UIActivityIndicatorView!
   
   // MARK: Vars
   
@@ -20,6 +26,12 @@ class FeedItemsTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    tableView.isHidden = true
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    
     addObservers()
     loadFeedData()
   }
@@ -42,6 +54,11 @@ class FeedItemsTableViewController: UITableViewController {
         items = dataManager.albums
       }
       
+      if items.count > 0 {
+        loadingLabel.isHidden = true
+        loadingActivity.isHidden = true
+        tableView.isHidden = false
+      }
       tableView.reloadData()
     }
   }
@@ -81,11 +98,11 @@ class FeedItemsTableViewController: UITableViewController {
   
   // MARK: Table View
   
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return FeedItemCell.height
   }
   
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     selectedIndex = indexPath.row
     tableView.deselectRow(at: indexPath, animated: true)
     performSegue(withIdentifier: "showItemDetail", sender: self)
@@ -93,11 +110,11 @@ class FeedItemsTableViewController: UITableViewController {
   
   // MARK: Table View Data Source
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: FeedItemCell.cellReuseIdentifier, for: indexPath) as! FeedItemCell
     let feedItem = items[indexPath.row]
     
